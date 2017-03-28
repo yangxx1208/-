@@ -1,0 +1,12 @@
+bool modular_linear_equation(int a, int b , int n)
+{
+    int x, y, x0 , i;
+    int d = exgcd(a,n , x, y );
+    if(b%d)
+        return false;
+    x0 = x*(b/d)%n;
+    for(int i=1; i<d; i++){
+        printf("%d\n",(x0+i*(n/d))%n);
+    }
+    return true;
+}
